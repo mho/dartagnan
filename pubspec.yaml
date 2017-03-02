@@ -1,27 +1,32 @@
 name: entrymvc
-description: EntryMVC built with polymer.dart
-version: 0.15.4
+description: EntryMVC built with Angular 2 and Polymer Dart.
+version: 0.1.4
 dependencies:
-  polymer: ^1.0.0-rc.2
-  web_components:
-  browser:
+  angular2: '>=2.2.0 <2.3.0'
+  polymer: ^1.0.0-rc.18
   polymer_elements:
     git: git://github.com/dart-lang/polymer_elements.git
+  web_components: ^0.12.0
+dev_dependencies:
+  browser: ^0.10.0
+  dart_to_js_script_rewriter: ^1.0.1
 transformers:
 - polymer:
-    entry_points:
-    - web/index.html
-    - test/listorder_test.html
-    - test/markdone_test.html
-    - test/mainpage_test.html
-- test/pub_serve:
-    $include: test/**_test{.*,}.dart
+    entry_points: web/index.html
+- angular2:
+    platform_directives:
+    - 'package:angular2/common.dart#COMMON_DIRECTIVES'
+    platform_pipes:
+    - 'package:angular2/common.dart#COMMON_PIPES'
+    entry_points: web/main.dart
 - $dart2js:
+    $include: '**/*.bootstrap.initialize.dart'
     minify: true
     commandLineOptions:
     - --trust-type-annotations
     - --trust-primitives
 dev_dependencies:
-  test: ^0.12.3
+  browser: ^0.10.0
+  dart_to_js_script_rewriter: ^1.0.1
 environment:
-  sdk: ">=1.8.0 <2.0.0"
+  sdk: '>=1.19.0 <2.0.0'

@@ -1,0 +1,45 @@
+<style>
+  .content {
+    padding: 15px;
+  }
+
+  .app-title {
+    text-align: center;
+  }
+
+  message-bar {
+    margin-bottom: 16px;
+  }
+</style>
+
+<paper-header-panel class="flex">
+    <paper-toolbar>
+        <paper-icon-button icon="menu"></paper-icon-button>
+        <div class="flex-auto">
+            <div style="width: 40px; height: 40px;"></div>
+        </div>
+        <h2 class="app-title flex-auto">Personal Locker</h2>
+        <paper-icon-button icon="refresh"
+                           (click)="newLocker()">
+        </paper-icon-button>
+        <paper-icon-button icon="add"
+                           (click)="addEntry()">
+            +
+        </paper-icon-button>
+    </paper-toolbar>
+
+    <div class="layout vertical center content">
+        <message-bar
+                [width]="boardSize"
+                [message]="message">
+        </message-bar>
+
+        <locker-view
+                [width]="boardSize"
+                [model]="locker"
+                (del)="onDel($event)"
+                (add)="onAdd()"
+                (sel)="onSel($event)">
+        </locker-view>
+    </div>
+</paper-header-panel>
