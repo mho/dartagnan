@@ -1,6 +1,7 @@
-name: entrymvc
-description: EntryMVC built with Angular 2 and Polymer Dart.
-version: 0.1.4
+name: dartagnan 
+description: personal locker mvp 
+version: 0.0.1
+author: Data Computing
 dependencies:
   angular2: '>=2.2.0 <2.3.0'
   polymer: ^1.0.0-rc.18
