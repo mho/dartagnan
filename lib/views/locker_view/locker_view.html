@@ -16,11 +16,27 @@
 
 </style>
 
-<paper-material elevation="3"
+<!--paper-material elevation="3"
                 class="layout horizontal wrap">
     <locker-entry *ngFor="let name of model.items.keys"
                   class="square layout vertical center center-justified"
                   (click)="entrySelected(name)">
         {{name}}
-    </locker-entry>
+   </locker-entry>
 </paper-material>
+    -->
+
+<div class="layout horizontal wrap">
+    <paper-card *ngFor="let name of model.items.keys">
+  <div class="card-content">
+    {{name}}
+  </div>
+  <div class="card-actions">
+    <div class="horizontal justified">
+      <input type="checkbox" class="toggle" id="completed">
+      <paper-button class="destroy" on-click="destroyAction">Del</paper-button>
+      <paper-input label="Content"></paper-input>
+    </div>
+  </div>
+</paper-card>
+</div>

@@ -1,3 +1,10 @@
+<style>
+  paper-card {
+    margin: 4px;
+  }
+</style>
+
+
 <paper-card>
   <div class="card-content">
     Content....
@@ -6,7 +13,7 @@
     <div class="horizontal justified">
       <input type="checkbox" class="toggle" id="completed">
       <paper-button class="destroy" on-click="destroyAction"></paper-button>
-      <paper-input label="Content"></paper-input>
+      <paper-input label="Content">{{name}}</paper-input>
     </div>
   </div>
 </paper-card>

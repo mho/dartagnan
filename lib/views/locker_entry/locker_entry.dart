@@ -8,8 +8,7 @@ import '../../model/locker.dart';
     encapsulation: ViewEncapsulation.Native,
     templateUrl: 'locker_entry.html'
 )
-class LockerEntryView {
-  LockerEntryView() {
 
-  }
+class LockerEntryView {
+  LockerEntryView() { }
 }
